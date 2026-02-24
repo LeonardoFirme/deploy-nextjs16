@@ -1,9 +1,8 @@
-// bin/cli.js
 #!/usr/bin/env node
 
 /**
  * @file cli.js
- * @description Script de inicialização de estruturas Leonardo Firme.
+ * @description Script de automação para deploy de estruturas NextJS 16
  * @author Leonardo Firme
  */
 

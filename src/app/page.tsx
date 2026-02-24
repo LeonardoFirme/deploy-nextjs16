@@ -35,7 +35,7 @@ export default function HomePage() {
             {/* Badge de Versão */}
             <motion.div variants={ITEM_VARIANTS}>
               <Badge className="bg-white px-5 py-1.5 font-orbitron tracking-[0.2em] text-gray-800 border-gray-200 dark:bg-gray-950/30 dark:border-gray-800 dark:text-gray-50">
-                ESTRUTURA V1.2.0 VALIDADA
+                ESTRUTURA V1.2.1 VALIDADA
               </Badge>
             </motion.div>
 
