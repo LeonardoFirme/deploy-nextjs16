@@ -1,6 +1,6 @@
 {
   "name": "@leonardofirme/deploy-nextjs16",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "private": false,
   "description": "Estruturas profissionais de ERP e SaaS - Leonardo Firme",
   "bin": {
