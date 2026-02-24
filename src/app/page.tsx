@@ -14,6 +14,13 @@ import { ITEM_VARIANTS, CONTAINER_VARIANTS } from '@/core/animations';
 import { StarfieldBackground } from '@/components/ui/StarfieldBackground';
 
 export default function HomePage() {
+  /**
+   * Redireciona para o pacote NPM em uma nova aba
+   */
+  const handleRedirect = () => {
+    window.open("https://www.npmjs.com/package/@leonardofirme/deploy-nextjs16", "_blank");
+  };
+
   return (
     <DefaultLayout>
       <StarfieldBackground>
@@ -27,7 +34,7 @@ export default function HomePage() {
           >
             {/* Badge de Versão */}
             <motion.div variants={ITEM_VARIANTS}>
-              <Badge className="bg-v0-50 px-5 py-1.5 font-orbitron tracking-[0.2em] text-v0-600 border-v0-200 dark:bg-v0-950/30 dark:border-v0-900">
+              <Badge className="bg-white px-5 py-1.5 font-orbitron tracking-[0.2em] text-gray-800 border-gray-200 dark:bg-gray-950/30 dark:border-gray-800 dark:text-gray-50">
                 ESTRUTURA V1.1.7 VALIDADA
               </Badge>
             </motion.div>
@@ -35,7 +42,7 @@ export default function HomePage() {
             {/* Headline Principal */}
             <motion.div variants={ITEM_VARIANTS} className="space-y-6">
               <h1 className="font-orbitron text-6xl font-bold uppercase leading-[0.9] tracking-tight text-gray-800 md:text-8xl dark:text-gray-50">
-                FALA <span className="text-v0-600">DEV!</span>
+                FALA <span className="text-v0-500">DEV!</span>
               </h1>
               <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-gray-500 md:text-xl dark:text-gray-100">
                 Sua infraestrutura está pronta para escala. Desenvolva com a precisão e a suavidade do
@@ -43,7 +50,7 @@ export default function HomePage() {
               </p>
             </motion.div>
 
-            {/* Botão com as cores exatas do seu padrão */}
+            {/* Botão com lógica de redirecionamento */}
             <motion.div variants={ITEM_VARIANTS} className="flex flex-col items-center gap-6 pt-6">
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -51,7 +58,8 @@ export default function HomePage() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <Button
-                  className="rounded-full px-14 py-5 font-orbitron text-xs uppercase tracking-[0.3em] shadow-2xl transition-all bg-gray-800 text-white hover:bg-gray-950 dark:bg-gray-50 dark:text-v0-500 dark:hover:bg-gray-200"
+                  onClick={handleRedirect}
+                  className="rounded-full px-14 py-5 font-orbitron text-xs tracking-[0.3em] shadow-2xl transition-all bg-gray-800 text-white hover:bg-gray-950 dark:bg-gray-50 dark:text-v0-500 dark:hover:bg-gray-200"
                 >
                   Começar Desenvolvimento
                 </Button>
@@ -60,7 +68,7 @@ export default function HomePage() {
               <motion.span
                 animate={{ opacity: [0.3, 0.7, 0.3] }}
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                className="font-orbitron text-[10px] uppercase tracking-[0.5em] text-gray-400"
+                className="font-orbitron text-[10px] uppercase tracking-[0.5em] text-v0-500 dark:text-gray-400"
               >
                 System Online
               </motion.span>
@@ -76,7 +84,7 @@ export default function HomePage() {
                 <span className="font-orbitron text-[10px] uppercase tracking-[0.6em] text-gray-400">
                   Leonardo Firme
                 </span>
-                <span className="text-center font-sans text-[9px] font-bold uppercase tracking-[0.2em] text-v0-600 opacity-80">
+                <span className="text-center font-sans text-[9px] font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-100 opacity-80">
                   FRAMEWORK V1 • 2026
                 </span>
               </div>
@@ -86,7 +94,7 @@ export default function HomePage() {
 
           {/* Efeito Visual de Background */}
           <div className="pointer-events-none absolute inset-0 z-0">
-            <div className="absolute top-1/2 left-1/2 h-200 w-200 -translate-x-1/2 -translate-y-1/2 rounded-full bg-v0-600/5 blur-[120px] dark:bg-v0-600/10" />
+            <div className="absolute top-1/2 left-1/2 h-200 w-200 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-200/20 blur-[120px] dark:bg-gray-800/20" />
           </div>
 
         </main>
