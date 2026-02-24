@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### 1. Push da v1.1.3 Estável
 
-## Getting Started
+Execute os comandos abaixo para consolidar a versão limpa no repositório:
 
-First, run the development server:
+```bash
+# Adiciona as mudanças (package.json atualizado e lock limpo)
+git add .
+git commit -m "release: v1.1.3 - full dependency cleanup and latest updates"
+
+# Sobe para o main
+git push origin main
+
+# Cria e sobe a tag oficial
+git tag v1.1.3
+git push origin v1.1.3
+
+```
+
+---
+
+### 2. Atualização do Projeto Padrão (Deploy)
+
+Agora que o pacote está no ar, vamos atualizar o projeto que os usuários vão baixar.
+
+```bash
+cd /var/www/html/deploy-nextjs16
+
+# Limpa para garantir a nova versão
+rm -rf node_modules package-lock.json
+
+# Instala a v1.1.3 limpa
+npm install @LeonardoFirme/package-npm@1.1.3
+
+```
+
+---
+
+### 3. README.md do Projeto `deploy-nextjs16`
+
+Conforme você pediu, aqui está o README profissional focado nos usuários que vão editar o seu projeto padrão.
+
+```markdown
+// README.md
+# Deploy NextJS 16+ | Leonardo Firme
+
+### Fala Dev!
+Criei esse projeto padrão NextJs 16+ com **Typescript**, **Tailwindcss v4** e o meu **package-npm**.
+Você pode baixar e explorar o projeto criando o que você quiser, desde Landing Pages até SaaS profissionais.
+
+---
+
+## 🚀 Como Começar
+
+Este projeto utiliza um pacote privado hospedado no GitHub Packages. Para rodar localmente, siga estes passos:
+
+### 1. Autenticação do Pacote
+Crie um arquivo `.npmrc` na raiz do seu projeto (se não existir) e adicione seu Token do GitHub:
+
+```text
+@LeonardoFirme:registry=[https://npm.pkg.github.com](https://npm.pkg.github.com)
+//[npm.pkg.github.com/:_authToken=SEU_GITHUB_PAT_AQUI](https://npm.pkg.github.com/:_authToken=SEU_GITHUB_PAT_AQUI)
+
+```
+
+### 2. Instalação
+
+```bash
+npm install
+
+```
+
+### 3. Desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ O que está incluso?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Next.js 16+**: Utilizando o novo padrão de rotas e performance.
+* **Tailwind CSS v4**: Otimizado para o motor de estilização mais rápido do mercado.
+* **Proxy Layer**: Implementação profissional em `src/proxy.ts` (Substituindo o middleware).
+* **Package NPM**: Acesso aos componentes exclusivos da biblioteca `@LeonardoFirme/package-npm`.
 
-## Learn More
+## 🎨 Layout e Estilo
 
-To learn more about Next.js, take a look at the following resources:
+O projeto já vem configurado com:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Suporte nativo a **Dark Mode** (`dark:`).
+* Cores padrão: `text-gray-800` (Light) / `text-gray-50` (Dark).
+* Backgrounds: `bg-white` / `bg-gray-950`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📄 Licença
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto é de uso livre para estudos e implementações de projetos pessoais e comerciais.
+Desenvolvido por [Leonardo Firme](https://github.com/LeonardoFirme).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

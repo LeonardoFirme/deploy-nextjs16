@@ -1,26 +1,79 @@
+/* src/app/globals.css */
+/**
+ * Estilização Global - Ecossistema Leonardo Firme
+ * Configuração de fontes (Instrument Sans & Orbitron), escala de cores v0 (Laravel Base)
+ * e scrollbar customizada profissional para NextJS 16+ e Tailwind v4.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* definindo instrument sans como a fonte principal do projeto */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+
+  /* escala v0 digital corrigida - baseada na cor oficial #ff2d20 */
+  --color-v0-50: #fff1f0;
+  --color-v0-100: #ffdfe1;
+  --color-v0-200: #ffc2bd;
+  --color-v0-300: #ff9187;
+  --color-v0-400: #ff5445;
+  --color-v0-500: #f83525;
+  --color-v0-600: #ff2d20; /* cor base oficial laravel */
+  --color-v0-700: #d61f14;
+  --color-v0-800: #b11d15;
+  --color-v0-900: #931d18;
+  --color-v0-950: #500a08;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-white text-gray-400 antialiased font-sans transition-colors duration-300 dark:bg-gray-950 dark:text-gray-300;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* ajuste fino para headlines utilizando a mesma fonte */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tighter;
+  }
+
+  a {
+    @apply font-sans;
+  }
+
+  /* --- scrollbar customizada profissional --- */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-v0-300 rounded-full border-2 border-solid border-white transition-colors;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-v0-600;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-800 border-gray-950;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-v0-600;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ff2d20 transparent;
+  }
+
+  .dark * {
+    scrollbar-color: #ff2d20 transparent;
+  }
 }
