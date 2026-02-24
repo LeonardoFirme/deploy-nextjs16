@@ -5,7 +5,7 @@ Estrutura profissional (Scaffold) para desenvolvimento de SaaS e ERPs dinâmicos
 ![Next.js](https://img.shields.io/badge/Next.js_16+-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-[![image-(1).png](https://i.postimg.cc/4xYCJkMz/image-(1).png)](https://postimg.cc/k2PYcZ74)
+[![Leonardo Firme](https://i.postimg.cc/4xYCJkMz/image-(1).png)](https://postimg.cc/k2PYcZ74)
 
 ---
 
