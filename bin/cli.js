@@ -1,4 +1,6 @@
 // bin/cli.js
+#!/usr/bin/env node
+
 /**
  * @file cli.js
  * @description Script de inicialização de estruturas Leonardo Firme.
@@ -9,23 +11,24 @@ const { execSync } = require('child_process');
 const path = require('path');
 
 function run() {
-    const projectName = process.argv[2] || 'my-professional-app';
+    // Pegamos o nome do projeto ou definimos o diretório atual
+    const projectName = process.argv[2] || '.';
     const repo = "LeonardoFirme/deploy-nextjs16";
 
     console.log("\x1b[34m%s\x1b[0m", "--- Estruturas Leonardo Firme: Inicializando ---");
 
     try {
-        // Usando degit para baixar a estrutura de pastas sem o .git
         console.log(`Clonando estrutura de ${repo}...`);
+        // Usando degit para baixar a estrutura sem o histórico do git
         execSync(`npx degit ${repo} ${projectName}`, { stdio: 'inherit' });
 
-        console.log("\x1b[32m%s\x1b[0m", `Sucesso! Estrutura instalada em: ./${projectName}`);
+        console.log("\x1b[32m%s\x1b[0m", `\nSucesso! Estrutura instalada.`);
         console.log("\nPróximos passos:");
-        console.log(`  cd ${projectName}`);
+        if (projectName !== '.') console.log(`  cd ${projectName}`);
         console.log(`  npm install`);
         console.log(`  npm run dev`);
     } catch (error) {
-        console.error("Erro ao clonar estrutura. Verifique sua conexão ou o nome do repositório.");
+        console.error("Erro ao clonar estrutura. Verifique se o diretório está vazio.");
         process.exit(1);
     }
 }

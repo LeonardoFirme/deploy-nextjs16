@@ -14,7 +14,7 @@ Estrutura profissional (Scaffold) para desenvolvimento de SaaS e ERPs dinâmicos
 Para iniciar um novo projeto utilizando este scaffold, execute o comando abaixo no seu terminal:
 
 ```bash
-npx @LeonardoFirme/deploy-nextjs16 meu-novo-projeto
+npx @LeonardoFirme/deploy-nextjs16   meu-novo-projeto
 
 ```
 
