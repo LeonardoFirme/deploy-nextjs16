@@ -9,91 +9,66 @@ Estrutura profissional (Scaffold) para desenvolvimento de SaaS e ERPs dinâmicos
 
 ---
 
-## 🚀 Instalação Rápida
+## 🚀 Inicialização Instantânea (Zero Config)
 
-Para iniciar um novo projeto utilizando este scaffold, execute o comando abaixo no seu terminal:
+Para criar um novo projeto com toda a arquitetura de pastas, componentes de UI e configurações de ambiente prontos para uso, execute:
 
 ```bash
-npx @leonardofirme/deploy-nextjs16   meu-novo-projeto
+npx @leonardofirme/deploy-nextjs16@latest meu-novo-projeto
 
 ```
 
-> **Nota:** Certifique-se de ter um arquivo `.npmrc` configurado com seu Token do GitHub para acessar os pacotes privados `@LeonardoFirme`.
+> **O que este comando faz:** Clona o repositório oficial, remove arquivos de infraestrutura desnecessários, instala todas as dependências do ecossistema e entrega o projeto pronto para o `npm run dev`.
 
 ---
 
-## 📂 Detalhamento da Estrutura
+## 📂 Arquitetura do Ecossistema
 
-### 📁 Raiz (Root) & Configurações
+### 📁 UI System (`src/components/ui`)
 
-* **`bin/lf-init`**: Executável do scaffold para automação da cópia de arquivos e setup inicial.
-* **`package.json`**: Manifesto com dependências (Next 16.1.6, React 19.2.3, Tailwind v4). Define o binário `lf-init`.
-* **`package-lock.json`**: Controle de integridade e versões das dependências.
-* **`postcss.config.mjs`**: Configuração do motor PostCSS para processamento do Tailwind v4.
-* **`tsconfig.json`**: Regras de tipagem estática e aliases de caminhos (paths) do projeto.
+Biblioteca de componentes atômicos construída sob o padrão **Tailwind v4**, com suporte nativo a `dark:mode` e layouts responsivos para ERPs.
 
-### 📁 `src/app` (Rotas e Estilo Global)
+* **Core:** Button, Input, Select, Table, Modal e Form Elements (sem restrição de case).
+* **Visuals:** Backgrounds animados (`Starfield`, `Fireworks`) e controle de tema dinâmico.
 
-* **`layout.tsx`**: Layout principal da aplicação. Gerencia fontes, metadados e wrappers de contexto.
-* **`page.tsx`**: View principal da rota raiz (Home).
-* **`globals.css`**: Configuração global do Tailwind v4 e variáveis de cores dinâmicas.
+### 📁 Core & Security (`src/core` & `src/proxy.ts`)
 
-### 📁 `src/components/ui` (Biblioteca Minimalista)
-
-Componentes atômicos com suporte nativo a `dark:`.
-
-* **`Alert.tsx`, `Badge.tsx`, `Breadcrumb.tsx**`: Sinalização, status e navegação.
-* **`Button.tsx`**: Ação principal (`bg-gray-800` light / `bg-gray-50` dark).
-* **`Card.tsx`, `Modal.tsx`, `Dropdown.tsx**`: Containers de conteúdo e sobreposição.
-* **`Input.tsx`, `Select.tsx`, `Checkbox.tsx`, `Toggle.tsx`, `Textarea.tsx**`: Elementos de formulário (sem manipulação de `uppercase`).
-* **`Table.tsx`**: Grid de dados avançado para sistemas ERP.
-* **`StarfieldBackground.tsx` & `FireworksBackground.tsx**`: Backgrounds animados profissionais.
-* **`ToggleDarkmode.tsx`**: Controle de alternância de tema.
-* **`Provider.tsx`**: Wrapper centralizador de contextos de interface.
-* **`Index.tsx`**: Ponto central de exportação dos componentes.
-
-### 📁 `src/core` (Lógica e Regras)
-
-* **`animations.ts`**: Configurações centralizadas de Framer Motion.
-* **`config.ts`**: Variáveis de ambiente e constantes globais do sistema.
-* **`constants.ts`**: Valores estáticos e Enums de negócio.
-* **`legal.ts`**: Textos jurídicos e termos padronizados.
-* **`providers/node-resolver.tsx`**: Gerenciador de hidratação para componentes Client/Server.
-
-### 📁 `src/hooks` & `src/layouts`
-
-* **`use-theme.tsx`**: Hook para controle lógico do estado Dark/Light.
-* **`default-layout.tsx`**: Template base estrutural para dashboards e plataformas.
-
-### 📁 `src/proxy.ts` (Segurança e Roteamento)
-
-* **`proxy.ts`**: Camada de interceptação que substitui o middleware, controlando headers e redirecionamentos.
-
-### 📁 `src/utils` & `src/types`
-
-* **`cn.ts`**: Utilitário para mesclagem condicional de classes Tailwind.
-* **`index.ts` & `common.ts**`: Contratos de interfaces e tipos globais do TypeScript.
+* **Proxy.ts:** Camada de segurança e redirecionamento moderno (substituindo middlewares descontinuados).
+* **Node-Resolver:** Gerenciamento de hidratação para estabilidade entre Client e Server side.
+* **Centralização:** Tipagens globais e configurações de animação (Framer Motion) padronizadas.
 
 ---
 
-## 🛠️ Comandos de Desenvolvimento
+## 🛠️ Comandos de Operação
+
+Após a inicialização via `npx`, utilize os comandos padrão:
 
 ```bash
-# Instalar dependências localmente
-npm install
-
-# Iniciar ambiente de desenvolvimento
+# Iniciar servidor de desenvolvimento (Turbo)
 npm run dev
 
-# Gerar build de produção
+# Gerar build de produção otimizado
 npm run build
 
+# Iniciar projeto em produção
+npm run start
+
 ```
+
+---
+
+## 👨‍💻 Autor e Mantenedor
+
+Desenvolvido por **Leonardo Firme**. Focado em entregar estruturas escaláveis para o mercado de plataformas SaaS e sistemas de gestão.
+
+* **GitHub Pessoal:** [LeonardoFirme](https://github.com/LeonardoFirme)
+* **V0 Digital:** [v0digital](https://github.com/v0digital)
+* **NPM Profile:** [@leonardofirme](https://www.npmjs.com/~leonardofirme)
 
 ---
 
 ## 📄 Licença
 
-Este projeto é de uso restrito para o ecossistema de plataformas desenvolvidas por [Leonardo Firme](https://github.com/LeonardoFirme).
+Uso disponível para a comunidade sob os termos de desenvolvimento de plataformas do ecossistema Leonardo Firme.
 
 ---
