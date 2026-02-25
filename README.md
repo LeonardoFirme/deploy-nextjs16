@@ -62,7 +62,6 @@ npm run start
 Desenvolvido por **Leonardo Firme**. Focado em entregar estruturas escaláveis para o mercado de plataformas SaaS e sistemas de gestão.
 
 * **GitHub Pessoal:** [LeonardoFirme](https://github.com/LeonardoFirme)
-* **V0 Digital:** [v0digital](https://github.com/v0digital)
 * **NPM Profile:** [@leonardofirme](https://www.npmjs.com/~leonardofirme)
 
 ---
